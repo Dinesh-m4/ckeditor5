@@ -192,16 +192,6 @@ ClassicEditor.defaultConfig = {
     ],
     shouldNotGroupWhenFull: true,
   },
-  htmlSupport: {
-    allow: [
-      {
-        name: "iframe",
-        attributes: true,
-        classes: true,
-        styles: true,
-      },
-    ],
-  },
   image: {
     styles: ["alignLeft", "alignCenter", "alignRight"],
     resizeOptions: [
