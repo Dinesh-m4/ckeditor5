@@ -70,6 +70,7 @@ import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformatio
 import TodoList from "@ckeditor/ckeditor5-list/src/todolist";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 import FullScreen from "./fullscreen-plugin";
+import Anchor from "@ckeditor/ckeditor5-anchor/src/anchor";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -94,7 +95,7 @@ ClassicEditor.builtinPlugins = [
   FontColor,
   FontFamily,
   FontSize,
-  // GeneralHtmlSupport,
+  GeneralHtmlSupport,
   Heading,
   Highlight,
   HorizontalLine,
@@ -121,6 +122,7 @@ ClassicEditor.builtinPlugins = [
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
+  Anchor,
   // RestrictedEditingMode,
   SourceEditing,
   SpecialCharacters,
@@ -185,9 +187,20 @@ ClassicEditor.defaultConfig = {
       "|",
       "fullScreen",
       "undo",
+      "anchor",
       "redo",
     ],
     shouldNotGroupWhenFull: true,
+  },
+  htmlSupport: {
+    allow: [
+      {
+        name: "iframe",
+        attributes: true,
+        classes: true,
+        styles: true,
+      },
+    ],
   },
   image: {
     styles: ["alignLeft", "alignCenter", "alignRight"],
